@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { useTranslation } from '~/app/i18n';
 import { Footer } from '../components/Footer';
 
-export default async function Page({ params }: { params: { lng: string } }) {
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function Page({ params }: { params: any}) {
   const { lng } = await params;
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng, 'second-page');

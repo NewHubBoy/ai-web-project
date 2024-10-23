@@ -5,8 +5,9 @@ import { useTranslation } from '../../i18n/client';
 import { Footer } from '../components/Footer/client';
 import { useState } from 'react';
 
-export default function Page({ params: { lng } }: { params: { lng: string } }) {
-    
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Page({ params }: { params: any }) {
+  const { lng } = params;
   const { t } = useTranslation(lng, 'client-page', {});
   const [counter, setCounter] = useState(0);
   return (
