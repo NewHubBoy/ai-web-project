@@ -1,6 +1,7 @@
 import { dir } from 'i18next';
 import { PropsWithChildren } from 'react';
 import { languages } from '~/app/i18n/setting';
+import './globals.css';
 
 // const languages = ['en', 'de'];
 
