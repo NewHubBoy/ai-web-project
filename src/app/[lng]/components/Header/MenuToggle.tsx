@@ -5,7 +5,7 @@ import type { Variants, Transition } from 'framer-motion';
 const Path = (props: { variants: Variants; d?: string; transition?: Transition }) => <motion.path fill="transparent" strokeWidth="3" stroke="hsl(0, 0%, 18%)" strokeLinecap="round" {...props} />;
 
 export const MenuToggle = ({ toggle }: { toggle: () => void }) => (
-  <button onClick={toggle}>
+  <button onClick={toggle} className='pt-2 px-3 rounded-sm border border-black pb-1'>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
