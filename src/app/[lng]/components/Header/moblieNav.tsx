@@ -15,6 +15,7 @@ const sidebar: Variants = {
     return {
       left: -0.1 * width,
       opacity: 1,
+      zIndex: 0,
       transition: {
         type: 'tween',
       },
@@ -24,6 +25,7 @@ const sidebar: Variants = {
     return {
       left: -1 * width,
       opacity: 0,
+      // zIndex: -1,
       transition: {
         type: 'tween',
         stiffness: 400,

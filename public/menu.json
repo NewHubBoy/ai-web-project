@@ -3,14 +3,36 @@
   "href": "/docs",
   "children": [
     {
-      "label": "introduction",
-      "href": "/docs/introduction",
-      "icon": "👋"
+      "label": "en",
+      "href": "/docs",
+      "children": [
+        {
+          "label": "introduction",
+          "href": "/docs/introduction",
+          "icon": "👋"
+        },
+        {
+          "label": "quickstart",
+          "href": "/docs/quickstart",
+          "icon": "👋"
+        }
+      ]
     },
     {
-      "label": "quickstart",
-      "href": "/docs/quickstart",
-      "icon": "👋"
+      "label": "zh-CN",
+      "href": "/docs",
+      "children": [
+        {
+          "label": "introduction",
+          "href": "/docs/introduction",
+          "icon": "👋"
+        },
+        {
+          "label": "quickstart",
+          "href": "/docs/quickstart",
+          "icon": "👋"
+        }
+      ]
     }
   ]
 }

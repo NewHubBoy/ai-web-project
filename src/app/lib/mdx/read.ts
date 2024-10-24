@@ -12,12 +12,13 @@ import { NavLink } from '../../../types/link';
  * @param extensions 扩展名数组，默认为 MDXConfig.extensions
  * @returns mdx原始数据(string) 和 error
  */
-export async function readMDXFile(MDXPath: string[] | string, extensions: string[] = MDXConfig.extensions): Promise<{ source: string | undefined; error: Error | undefined }> {
+export async function readMDXFile(MDXPath: string[] | string, lng: string = 'en', extensions: string[] = MDXConfig.extensions): Promise<{ source: string | undefined; error: Error | undefined }> {
   try {
     // 将MDXPath数组转换为完整路径
     const fullMDXPath = Array.isArray(MDXPath) ? MDXPath.map((p) => p.trim()).join('/') : MDXPath.trim();
     // 根据MDXPath和extensions，生成路径数组
-    const paths = extensions.map((extension) => path.join(MDXConfig.DOCS_PATH, `${fullMDXPath}.${extension}`));
+    const paths = extensions.map((extension) => path.join(MDXConfig.DOCS_PATH + '/' + lng, `${fullMDXPath}.${extension}`));
+    console.log(paths);
     // console.log('paths:', paths);
     // 读取第一个存在的文件，不存在则抛出异常
     const file = await readFirstExistingFileAsync(paths);
