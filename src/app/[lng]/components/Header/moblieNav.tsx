@@ -8,6 +8,7 @@ import CloseButton from './closeButton';
 import { useTranslation } from '../../../i18n/client';
 import Link from 'next/link';
 import { languages } from '~/app/i18n/setting';
+import { usePathname } from 'next/navigation';
 
 const sidebar: Variants = {
   open: (width = 390) => {
@@ -37,6 +38,7 @@ const MobileNav = ({ lng }: { lng: string }) => {
   const containerRef = useRef(null);
   const { width } = useDimensions(containerRef);
   const { t } = useTranslation(lng, 'header', {});
+  const route = usePathname();
 
   return (
     <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'} className="md:hidden flex-row-reverse flex p-4">
@@ -76,7 +78,7 @@ const MobileNav = ({ lng }: { lng: string }) => {
                   return (
                     <span key={l}>
                       {index > 0 && ' or '}
-                      <Link className="hover:text-orange-400" href={`/${l}`}>
+                      <Link className="hover:text-orange-400" href={`${route.replace(lng, l)}`}>
                         {l == 'en' ? <span className="fi fi-us mx-1"></span> : <span className="fi fi-cn mx-1"></span>}
                         {t('locales')}
                       </Link>

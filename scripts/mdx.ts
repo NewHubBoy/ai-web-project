@@ -2,7 +2,6 @@ import { buildMDXMenu, TreeNode } from "~/app/lib/mdx/build"
 import fs from "fs"
 import { MDXConfig } from "~/app/lib/mdx"
 import path from 'path'
-// import { NavLink } from "@/types/link"
 import { NavLink } from "../src/types/link"
 import grayMatter from 'gray-matter';
 

@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react';
 import { languages } from '~/app/i18n/setting';
 import './globals.css';
 
-import { Header } from './components/Header';
+import { Header } from './components/Header/client';
 // const languages = ['en', 'de'];
 
 export async function generateStaticParams() {

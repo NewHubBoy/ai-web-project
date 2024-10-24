@@ -2,10 +2,14 @@ import { TFunction } from 'i18next';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { languages } from '~/app/i18n/setting';
-import "/node_modules/flag-icons/css/flag-icons.min.css";
+import '/node_modules/flag-icons/css/flag-icons.min.css';
+import { usePathname } from 'next/navigation';
+
 const MobileNav = dynamic(() => import('./moblieNav'));
 
 export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
+  const route = usePathname();
+
   return (
     <header className="bg-slate-400">
       <div className="grid grid-cols-2 w-full max-w-[1170px] m-auto py-1">
@@ -43,7 +47,7 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
                   return (
                     <span key={l}>
                       {index > 0 && ' or '}
-                      <Link className="hover:text-orange-400" href={`/${l}`}>
+                      <Link className="hover:text-orange-400" href={`${route.replace(lng, l)}`}>
                         {t('locales')}
                       </Link>
                     </span>

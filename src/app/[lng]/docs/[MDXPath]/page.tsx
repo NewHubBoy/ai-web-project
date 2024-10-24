@@ -37,5 +37,11 @@ export default async function Page({ params }: { params: Params }) {
   const { source, error } = await readMDXFile(MDXPath);
   if (error) return <div>Load error</div>;
   if (source === undefined) return <div>file does not unexist or is corrupt</div>;
-  return <MDXRemote source={source} options={{ parseFrontmatter: true }} />;
+  return (
+    <div>
+      <MDXRemote source={source} options={{ parseFrontmatter: true }} />
+      <div>上一页</div>
+      <div>下一页</div>
+    </div>
+  );
 }
