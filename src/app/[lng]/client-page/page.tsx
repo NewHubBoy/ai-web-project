@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { useTranslation } from '../../i18n/client';
 import { Footer } from '../components/Footer/client';
-import { useState } from 'react';
+import { use, useState } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Page({ params }: { params: any }) {
-  const { lng } = params;
+type Params = Promise<{ lng: string }>;
+export default function Page({ params }: { params: Params }) {
+  const { lng } = use(params);
   const { t } = useTranslation(lng, 'client-page', {});
   const [counter, setCounter] = useState(0);
   return (

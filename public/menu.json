@@ -1,0 +1,16 @@
+{
+  "label": "docs",
+  "href": "/docs",
+  "children": [
+    {
+      "label": "introduction",
+      "href": "/docs/introduction",
+      "icon": "👋"
+    },
+    {
+      "label": "quickstart",
+      "href": "/docs/quickstart",
+      "icon": "👋"
+    }
+  ]
+}

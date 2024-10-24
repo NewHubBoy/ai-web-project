@@ -10,9 +10,8 @@ export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const RootLayout: React.FC<PropsWithChildren<{ params: any }>> = async ({ children, params }) => {
+type Params = Promise<{ lng: string }>;
+const RootLayout: React.FC<PropsWithChildren<{ params: Params }>> = async ({ children, params }) => {
   const { lng } = await params;
 
   return (
