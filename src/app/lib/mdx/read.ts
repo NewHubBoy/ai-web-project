@@ -18,7 +18,6 @@ export async function readMDXFile(MDXPath: string[] | string, lng: string = 'en'
     const fullMDXPath = Array.isArray(MDXPath) ? MDXPath.map((p) => p.trim()).join('/') : MDXPath.trim();
     // 根据MDXPath和extensions，生成路径数组
     const paths = extensions.map((extension) => path.join(MDXConfig.DOCS_PATH + '/' + lng, `${fullMDXPath}.${extension}`));
-    console.log(paths);
     // console.log('paths:', paths);
     // 读取第一个存在的文件，不存在则抛出异常
     const file = await readFirstExistingFileAsync(paths);

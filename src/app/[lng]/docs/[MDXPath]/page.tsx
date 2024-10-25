@@ -57,13 +57,23 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
 export default async function Page({ params }: { params: Params }) {
   const { MDXPath, lng } = await params;
-  console.log(lng);
   const { source, error } = await readMDXFile(MDXPath, lng);
   if (error) return <div>Load error</div>;
   if (source === undefined) return <div>file does not unexist or is corrupt</div>;
   return (
     <div>
-      <MDXRemote source={source} options={{ parseFrontmatter: true, ...options }} />
+      <MDXRemote
+        source={source}
+        options={{ parseFrontmatter: true, ...options }}
+        components={{
+          h1: ({ children }) => <h1 style={{ fontSize: '2.2em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h1>,
+          h2: ({ children }) => <h2 style={{ fontSize: '1.65em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h2>,
+          h3: ({ children }) => <h3 style={{ fontSize: '1.35em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h3>,
+          h4: ({ children }) => <h4 style={{ fontSize: '1em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h4>,
+          h5: ({ children }) => <h5 style={{ fontSize: '0.83em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h5>,
+          h6: ({ children }) => <h6 style={{ fontSize: '0.67em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h6>,
+        }}
+      />
       <div>上一页</div>
       <div>下一页</div>
     </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { languages } from '~/app/i18n/setting';
 import '/node_modules/flag-icons/css/flag-icons.min.css';
 import { usePathname } from 'next/navigation';
+import { Fragment } from 'react';
 
 const MobileNav = dynamic(() => import('./moblieNav'));
 
@@ -11,15 +12,15 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
   const route = usePathname();
 
   return (
-    <header className="bg-slate-400">
+    <header className="w-full">
       <div className="grid grid-cols-2 w-full max-w-[1170px] m-auto py-1">
         <div className="flex items-center">
-          <div className="px-4">
-            <div className="w-[120px] h-[52px] bg-purple-300"></div>
+          <div className="px-4 my-2">
+            <div className="w-[120px] h-[52px] bg-purple-300 my-2"></div>
           </div>
         </div>
-        <nav className="md:flex flex-row-reverse hidden">
-          <ul className="flex space-x-8 uppercase items-center h-full text-xs font-semibold">
+        <nav className="md:flex flex-row-reverse hidden px-6">
+          <ul className="flex space-x-8 uppercase items-center h-full text-[0.8em] list-none text-black!important font-semibold">
             <li>
               <Link className="hover:text-orange-400" href={'/' + lng}>
                 {t('index')}
@@ -45,12 +46,15 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
                 .filter((l) => lng !== l)
                 .map((l, index) => {
                   return (
-                    <span key={l}>
-                      {index > 0 && ' or '}
-                      <Link className="hover:text-orange-400" href={`${route.replace(lng, l)}`}>
-                        {t('locales')}
-                      </Link>
-                    </span>
+                    <Fragment key={'locale-' + l}>
+                      <span className="mx-1">{l === 'en' ? <span className="fi fi-us"></span> : <span className="fi fi-cn"></span>}</span>
+                      <span key={l}>
+                        {index > 0 && ' or '}
+                        <Link className="hover:text-orange-400" href={`${route.replace(lng, l)}`}>
+                          {t('locales')}
+                        </Link>
+                      </span>
+                    </Fragment>
                   );
                 })}
             </li>
