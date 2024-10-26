@@ -70,7 +70,7 @@ const MobileNav = ({ lng }: { lng: string }) => {
             <Link className="hover:text-orange-400" href={`/${lng}`} onClick={() => toggleOpen()}>
               {t('news')}
             </Link>
-            <Link className="hover:text-orange-400" href={`/${lng}`} onClick={() => toggleOpen()}>
+            <Link className="hover:text-orange-400" href={'/' + lng + '/' + "#" + "connect"} onClick={() => toggleOpen()}>
               {t('connect')}
             </Link>
             <span>

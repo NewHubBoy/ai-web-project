@@ -3,7 +3,7 @@ import CommonContainer from '../CommonContainer';
 
 const SectionThree = () => {
   return (
-    <div className="w-full py-[64px] px-[24px]">
+    <section className="w-full py-[64px] px-[24px]">
       <CommonContainer className="flex flex-col justify-center h-full m-auto max-w-[1140px]">
         <h2 className="text-[50px] font-semibold mb-10 text-[#272626]">联盟发起人</h2>
         <div className="flex justify-center items-start w-full pt-5">
@@ -39,7 +39,7 @@ const SectionThree = () => {
           </div>
         </div>
       </CommonContainer>
-    </div>
+    </section>
   );
 };
 

@@ -1,8 +1,9 @@
 import CommonContainer from '../CommonContainer';
+import ConnectForm from './components/Connect-form';
 
 const SectionConnect = () => {
   return (
-    <div>
+    <section className="py-16 px-6" id='connect'>
       <CommonContainer className="flex justify-center h-full m-auto max-w-[1140px]">
         <div className="basis-1/2 flex flex-col p-6 items-start">
           <h2 className="text-[50px] font-semibold mb-6 text-[#272626] text-left">联系我们</h2>
@@ -12,9 +13,11 @@ const SectionConnect = () => {
           <p className="text-[17px] leading-7 font-normal text-[#2b2b2b]">admin@auaimusic.com</p>
           <p className="text-[17px] leading-7 font-normal text-[#2b2b2b]">澳大利亚，悉尼，2000</p>
         </div>
-        <div className="basis-1/2"></div>
+        <div className="basis-1/2 p-6">
+          <ConnectForm />
+        </div>
       </CommonContainer>
-    </div>
+    </section>
   );
 };
 

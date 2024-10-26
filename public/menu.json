@@ -14,7 +14,8 @@
         {
           "label": "quickstart",
           "href": "/docs/quickstart",
-          "icon": "👋"
+          "icon": "👋",
+          "category": "knowledgebase"
         }
       ]
     },
@@ -30,7 +31,8 @@
         {
           "label": "quickstart",
           "href": "/docs/quickstart",
-          "icon": "👋"
+          "icon": "👋",
+          "category": "knowledgebase"
         }
       ]
     }

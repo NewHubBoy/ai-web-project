@@ -26,8 +26,10 @@ export async function generateMDXMenu() {
       if (frontmatter?.icon !== undefined) {
         item.icon = frontmatter.icon as string;
       }
+      if (frontmatter?.category !== undefined) {
+        item.category = frontmatter.category as string;
+      }
     }
-    // console.log('itemPath', itemPath);
     return item;
   };
 

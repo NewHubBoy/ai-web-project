@@ -3,7 +3,7 @@ import CommonContainer from '../CommonContainer';
 
 const SectionFour = () => {
   return (
-    <div className="w-full py-[80px] px-[20px]">
+    <section className="w-full py-[80px] px-[20px]">
       <CommonContainer className="flex justify-center items-center h-full m-auto">
         <div className="flex items-center justify-center w-full">
           <div className="basis-1/2">
@@ -20,7 +20,7 @@ const SectionFour = () => {
           </div>
         </div>
       </CommonContainer>
-    </div>
+    </section>
   );
 };
 

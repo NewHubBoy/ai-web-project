@@ -37,7 +37,7 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
               </Link>
             </li>
             <li>
-              <Link className="hover:text-orange-400" href={'/' + lng}>
+              <Link className="hover:text-orange-400" href={'/' + lng + '/' + "#" + "connect"}>
                 {t('connect')}
               </Link>
             </li>

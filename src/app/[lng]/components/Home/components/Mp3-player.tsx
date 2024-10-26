@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Progress } from '~/app/[lng]/components/Progress';
 import { PauseCircleIcon } from './PauseCircleIcon';
-import { PauseIcon } from './PauseIcon';
+// import { PauseIcon } from './PauseIcon';
 import { PreviousIcon } from './PreviousIcon';
 import { NextIcon } from './NextIcon';
 

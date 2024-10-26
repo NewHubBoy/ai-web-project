@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import CommonContainer from '../CommonContainer';
 import MP3Player from './components/Mp3-player';
 
 const SectionSix = () => {
   return (
-    <div className="w-full py-[64px] px-[24px] pt-6">
+    <section className="w-full py-[64px] px-[24px] pt-6">
       <CommonContainer className="flex justify-center h-full m-auto max-w-[1140px]">
         <div className="basis-1/3 flex flex-col p-6 items-start">
           <h2 className="text-[50px] font-semibold mb-10 text-[#272626] text-left">AI音乐欣赏</h2>
@@ -18,7 +17,7 @@ const SectionSix = () => {
           <MP3Player />
         </div>
       </CommonContainer>
-    </div>
+    </section>
   );
 };
 

@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   return {
     title: metadata.title,
     description: metadata.description,
+    category: metadata.category,
   };
 }
 
