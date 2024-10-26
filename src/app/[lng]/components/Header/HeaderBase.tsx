@@ -14,13 +14,13 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
 
   return (
     <header className="w-full shadow-sm">
-      <div className="grid grid-cols-2 w-full max-w-[1170px] m-auto py-1">
+      <div className="grid grid-cols-3 w-full max-w-[1170px] m-auto py-1">
         <div className="flex items-center">
           <div className="px-4 my-2">
             <div className="w-[120px] h-[52px] bg-purple-300 my-2"></div>
           </div>
         </div>
-        <nav className="md:flex flex-row-reverse hidden px-6">
+        <nav className="md:flex flex-row-reverse hidden px-6 col-span-2">
           <ul className="flex space-x-8 uppercase items-center h-full text-[0.8em] list-none text-black!important font-semibold">
             <li>
               <Link className="hover:text-orange-400" href={'/' + lng}>

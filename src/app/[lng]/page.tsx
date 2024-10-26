@@ -1,6 +1,6 @@
 // import { useTranslation } from '~/app/i18n';
 // import { Metadata } from 'next';
-import { Footer } from './components/Footer';
+// import { Footer } from './components/Footer';
 import SectionOne from './components/Home/Section-one';
 import SectionTwo from './components/Home/Section-two';
 import SectionThree from './components/Home/Section-three';
@@ -12,19 +12,23 @@ import SectionConnect from './components/Home/Section-Connect';
 
 type Params = Promise<{ lng: string }>;
 export default async function Page({ params }: { params: Params }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { lng } = await params;
   // eslint-disable-next-line react-hooks/rules-of-hooks
   // const { t } = await useTranslation(lng, 'translation');
   return (
     <main>
       <SectionOne />
-      <SectionTwo />
+      <SectionOne />
+      <SectionOne />
+      <SectionOne />
+      {/* <SectionTwo />
       <SectionThree />
       <SectionFour />
       <SectionFive />
       <SectionSix />
       <SectionSeven />
-      <SectionConnect />
+      <SectionConnect /> */}
       {/* <Footer lng={lng} /> */}
     </main>
   );
