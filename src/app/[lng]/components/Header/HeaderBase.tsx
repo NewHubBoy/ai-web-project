@@ -12,7 +12,7 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
   const route = usePathname();
 
   return (
-    <header className="w-full">
+    <header className="w-full shadow-sm">
       <div className="grid grid-cols-2 w-full max-w-[1170px] m-auto py-1">
         <div className="flex items-center">
           <div className="px-4 my-2">
