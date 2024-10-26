@@ -5,6 +5,7 @@ import { languages } from '~/app/i18n/setting';
 import '/node_modules/flag-icons/css/flag-icons.min.css';
 import { usePathname } from 'next/navigation';
 import { Fragment } from 'react';
+import { cn } from '~/app/lib/utils';
 
 const MobileNav = dynamic(() => import('./moblieNav'));
 
@@ -27,17 +28,17 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
               </Link>
             </li>
             <li>
-              <Link className="hover:text-orange-400" href={'/' + lng}>
+              <Link className={cn("hover:text-orange-400",route.match(/knowledgebase/) ? "text-orange-400" : "")} href={'/' + lng + '/category/knowledgebase'}>
                 {t('blogs')}
               </Link>
             </li>
             <li>
-              <Link className="hover:text-orange-400" href={'/' + lng}>
+              <Link className={cn("hover:text-orange-400",route.match(/industryupdate/) ? "text-orange-400" : "")} href={'/' + lng + '/category/industryupdate/'}>
                 {t('news')}
               </Link>
             </li>
             <li>
-              <Link className="hover:text-orange-400" href={'/' + lng + '/' + "#" + "connect"}>
+              <Link className="hover:text-orange-400" href={'/' + lng + '/' + '#' + 'connect'}>
                 {t('connect')}
               </Link>
             </li>

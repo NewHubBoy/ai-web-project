@@ -3,5 +3,10 @@ export interface NavLink {
   href: string;
   icon?: string;
   category?: string;
+  categoryTitle?: string;
+  categoryDescription?: string;
+  title?: string;
+  standard?: boolean;
+  description?: string;
   children?: NavLink[];
 }

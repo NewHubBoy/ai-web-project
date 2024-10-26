@@ -6,6 +6,7 @@ import rehypeshikiji from 'rehype-shikiji';
 import { readMDXFile, extractMDXMenuPaths } from '~/app/lib/mdx/read';
 import grayMatter from 'gray-matter';
 import { Metadata } from 'next';
+import CommonContainer from '../../components/CommonContainer';
 
 const options: MDXRemoteProps['options'] = {
   mdxOptions: {
@@ -61,22 +62,35 @@ export default async function Page({ params }: { params: Params }) {
   const { source, error } = await readMDXFile(MDXPath, lng);
   if (error) return <div>Load error</div>;
   if (source === undefined) return <div>file does not unexist or is corrupt</div>;
+  const { data: metadata } = grayMatter(source!);
   return (
-    <div>
-      <MDXRemote
-        source={source}
-        options={{ parseFrontmatter: true, ...options }}
-        components={{
-          h1: ({ children }) => <h1 style={{ fontSize: '2.2em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h1>,
-          h2: ({ children }) => <h2 style={{ fontSize: '1.65em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h2>,
-          h3: ({ children }) => <h3 style={{ fontSize: '1.35em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h3>,
-          h4: ({ children }) => <h4 style={{ fontSize: '1em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h4>,
-          h5: ({ children }) => <h5 style={{ fontSize: '0.83em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h5>,
-          h6: ({ children }) => <h6 style={{ fontSize: '0.67em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h6>,
-        }}
-      />
-      <div>上一页</div>
-      <div>下一页</div>
-    </div>
+    <CommonContainer className="min-h-[calc(100vh-64px)] overflow-y-auto m-auto">
+      <div className="max-w-[819px] px-4 m-auto text-[#272626]">
+        <div className="my-16">
+          <h1 className="text-7xl font-semibold mb-3 leading-tight my-16">{metadata.title.replace('：', ': ')}</h1>
+          <p>by yutaichi</p>
+        </div>
+        <MDXRemote
+          source={source}
+          options={{ parseFrontmatter: true, ...options }}
+          components={{
+            h1: ({ children }) => <h1 className="text-7xl font-bold mb-3 leading-tight">{children}</h1>,
+            h2: ({ children }) => <h2 style={{ fontSize: '1.65em', fontWeight: 600, lineHeight: 1.25 }} className='mb-8'>{children}</h2>,
+            h4: ({ children }) => <h4 style={{ fontSize: '1em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h4>,
+            h5: ({ children }) => <h5 style={{ fontSize: '0.83em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h5>,
+            h6: ({ children }) => <h6 style={{ fontSize: '0.67em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h6>,
+            p: ({ children }) => <p className="tracking-wide leading-relaxed text-md mb-8">{children}</p>,
+            img: ({ alt, src }) => <img className="w-full mb-6" alt={alt} src={src} />,
+            h3: ({ children }) => <h3 className="mb-8 text-lg font-semibold">{children}</h3>,
+            ol: ({ children }) => <ol className="mb-6 list-decimal list-inside">{children}</ol>,
+            li: ({ children }) => <li className="mb-6 tracking-wide font-normal leading-relaxed text-md">{children}</li>,
+          }}
+        />
+        <div className="flex justify-between">
+          <div>上一页</div>
+          <div>下一页</div>
+        </div>
+      </div>
+    </CommonContainer>
   );
 }

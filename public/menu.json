@@ -7,15 +7,46 @@
       "href": "/docs",
       "children": [
         {
+          "label": "ai-music-the-future-of-music",
+          "href": "/docs/ai-music-the-future-of-music",
+          "category": "knowledgebase",
+          "title": "AI Music：The New Frontier of Future Music Creation",
+          "description": "With the rapid development of artificial intelligence (AI) technology, AI music is gradually becoming the new frontier in music creation. AI music..."
+        },
+        {
           "label": "introduction",
           "href": "/docs/introduction",
-          "icon": "👋"
+          "icon": "👋",
+          "category": "industryupdate",
+          "title": "介绍",
+          "description": "Next.js + MDX.js + next-mdx-remote 的demo项目"
         },
         {
           "label": "quickstart",
           "href": "/docs/quickstart",
-          "icon": "👋",
-          "category": "knowledgebase"
+          "category": "knowledgebase",
+          "title": "快速开始",
+          "description": "With the rapid development of artificial intelligence technology, the application of AI in various fields has become increasingly common, among which the rise of AI music..."
+        },
+        {
+          "label": "standard-blogs",
+          "href": "/docs/standard-blogs",
+          "icon": null,
+          "category": "knowledgebase",
+          "title": "standard",
+          "description": "standard",
+          "categoryTitle": "blogs",
+          "standard": true
+        },
+        {
+          "label": "standard-news",
+          "href": "/docs/standard-news",
+          "icon": null,
+          "category": "industryupdate",
+          "title": "standard",
+          "description": "standard",
+          "categoryTitle": "news",
+          "standard": true
         }
       ]
     },
@@ -24,15 +55,47 @@
       "href": "/docs",
       "children": [
         {
+          "label": "ai-music-the-future-of-music",
+          "href": "/docs/ai-music-the-future-of-music",
+          "category": "knowledgebase",
+          "title": "AI音乐：未来音乐创作的新前沿",
+          "description": "AI音乐：未来音乐创作的新前沿"
+        },
+        {
           "label": "introduction",
           "href": "/docs/introduction",
-          "icon": "👋"
+          "icon": "👋",
+          "category": "industryupdate",
+          "title": "介绍",
+          "description": "Next.js + MDX.js + next-mdx-remote 的demo项目"
         },
         {
           "label": "quickstart",
           "href": "/docs/quickstart",
           "icon": "👋",
-          "category": "knowledgebase"
+          "category": "knowledgebase",
+          "title": "快速开始",
+          "description": "了解如何快速开始使用，以及一些基本概念。"
+        },
+        {
+          "label": "standard-blogs",
+          "href": "/docs/standard-blogs",
+          "icon": null,
+          "category": "knowledgebase",
+          "title": "standard",
+          "description": "standard",
+          "categoryTitle": "知识库",
+          "standard": true
+        },
+        {
+          "label": "standard-news",
+          "href": "/docs/standard-news",
+          "icon": null,
+          "category": "industryupdate",
+          "title": "standard",
+          "description": "standard",
+          "categoryTitle": "行业动态",
+          "standard": true
         }
       ]
     }

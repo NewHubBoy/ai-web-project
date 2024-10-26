@@ -29,6 +29,18 @@ export async function generateMDXMenu() {
       if (frontmatter?.category !== undefined) {
         item.category = frontmatter.category as string;
       }
+      if (frontmatter?.title !== undefined) {
+        item.title = frontmatter.title as string;
+      }
+      if (frontmatter?.description !== undefined) {
+        item.description = frontmatter.description as string;
+      }
+      if (frontmatter?.categoryTitle !== undefined) {
+        item.categoryTitle = frontmatter.categoryTitle as string;
+      }
+      if (frontmatter?.standard !== undefined) {
+        item.standard = frontmatter.standard as boolean;
+      }
     }
     return item;
   };
