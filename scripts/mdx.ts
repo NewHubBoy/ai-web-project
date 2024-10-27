@@ -41,6 +41,9 @@ export async function generateMDXMenu() {
       if (frontmatter?.standard !== undefined) {
         item.standard = frontmatter.standard as boolean;
       }
+      if (frontmatter?.author !== undefined) {
+        item.author = frontmatter.author as string;
+      }
     }
     return item;
   };

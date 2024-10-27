@@ -6,6 +6,8 @@ export interface NavLink {
   categoryTitle?: string;
   categoryDescription?: string;
   title?: string;
+  author?: string;
+  date?: Date;
   standard?: boolean;
   description?: string;
   children?: NavLink[];

@@ -15,7 +15,7 @@ const SectionTwo = () => {
               <p className="md:text-[17px] text-sm tracking-wide leading-7 font-normal text-[#2b2b2b] mb-8">
                 成为全球领先的AI音乐普及与商业创新平台。我们相信，AI音乐不仅仅是一种对音乐生成技术的创新，更是一种通过音乐赋能商业模式的升华。未来，澳大利亚AI音乐联盟将致力于推动AI音乐的应用场景落地，让更多人了解AI音乐的魅力。
               </p>
-              <button className="py-3 px-6 bg-[#fcaf3b] text-[17px] font-semibold leading-7">更多行业动态</button>
+              <button className="py-3 px-6 bg-[#fcaf3b] text-sm md:text-[17px] font-semibold leading-7">更多行业动态</button>
             </div>
           </div>
         </div>

@@ -19,7 +19,9 @@ export const HeaderBase = ({ t, lng }: { t: TFunction; lng: string }) => {
         <div className="flex items-center">
           <div className="px-4 my-2">
             <div className="w-[120px] h-[52px] my-2">
-              <Image src={'https://auaimusic.com/wp-content/uploads/2024/08/cropped-cropped-cropped-%E8%81%94%E7%9B%9FLogo.jpg'} width={120} height={52} alt="logo" />
+              <Link href={'/' + lng}>
+                <Image src={'https://auaimusic.com/wp-content/uploads/2024/08/cropped-cropped-cropped-%E8%81%94%E7%9B%9FLogo.jpg'} width={120} height={52} alt="logo" />
+              </Link>
             </div>
           </div>
         </div>

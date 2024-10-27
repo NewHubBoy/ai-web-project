@@ -3,10 +3,10 @@ import { readMDXMenu } from '~/app/lib/mdx/read';
 import CommonContainer from '../../components/CommonContainer';
 import { Metadata } from 'next';
 
-type Params = Promise<{ categoryName: string; lng: string }>;
+type Params = Promise<{ authorName: string; lng: string }>;
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const { categoryName, lng } = await params;
+  const { authorName, lng } = await params;
   const MetaData: Metadata = {
     title: '',
     description: '',
@@ -17,15 +17,15 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     return label === lng;
   });
   if (menuWithLng?.length) {
-    const currentcategory = menuWithLng![0].children?.filter(({ category, standard }) => {
-      if (category) {
-        return category === categoryName && standard;
+    const currentcategory = menuWithLng![0].children?.filter(({ author }) => {
+      if (author) {
+        return author === authorName;
       } else {
         return false;
       }
     });
     if (currentcategory?.length) {
-      MetaData.title = currentcategory[0]?.categoryTitle;
+      MetaData.title = currentcategory[0]?.author;
       MetaData.description = currentcategory[0]?.categoryDescription;
     }
   }
@@ -37,29 +37,29 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 }
 
 export default async function Page({ params }: { params: Params }) {
-  const { categoryName, lng } = await params;
+  const { authorName, lng } = await params;
   const menu = await readMDXMenu();
 
   const menuWithLng = menu.children?.filter(({ label }) => {
     return label === lng;
   });
 
-  const currentcategory = menuWithLng![0].children?.filter(({ category, standard }) => {
-    if (category) {
-      return category === categoryName && !standard;
+  const currentcategory = menuWithLng![0].children?.filter(({ author }) => {
+    if (author) {
+      return author === authorName;
     } else {
       return false;
     }
   });
 
-  const category = menuWithLng![0].children?.find(({ category, standard }) => {
-    return category === categoryName && standard;
+  const author = menuWithLng![0].children?.find(({ author }) => {
+    return author === authorName;
   });
 
   return (
     <CommonContainer className="m-auto min-h-[calc(100vh-64px)] overflow-y-auto">
       <div className="my-14 px-4">
-        <h1 className="text-[#2b2b2b] text-4xl md:text-[70px] md:leading-relaxed font-medium text-left mb-6 uppercase">{category?.categoryTitle}</h1>
+        <h1 className="text-[#2b2b2b] text-4xl md:text-[70px] md:leading-relaxed font-medium text-left mb-6 uppercase">{author?.author}</h1>
         <div className="grid md:grid-cols-2 gap-4 grid-cols-1">
           {currentcategory?.map((item) => {
             return (
