@@ -19,16 +19,13 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <main>
       <SectionOne />
-      <SectionOne />
-      <SectionOne />
-      <SectionOne />
-      {/* <SectionTwo />
+      <SectionTwo />
       <SectionThree />
       <SectionFour />
       <SectionFive />
       <SectionSix />
       <SectionSeven />
-      <SectionConnect /> */}
+      <SectionConnect />
       {/* <Footer lng={lng} /> */}
     </main>
   );

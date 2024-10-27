@@ -12,7 +12,7 @@ interface Props {
 
 const CloseButton: React.FC<PropsWithChildren<Props>> = (props) => {
   return (
-    <button onClick={() => props.onClick()} className={cn('p-1 border border-black rounded-sm px-3')}>
+    <button onClick={() => props.onClick()} className={cn('p-1 border-black rounded-sm px-3 border-2')}>
       <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
         <path d="M 5 16 L 16 4" stroke="black" strokeWidth="2" fill="none" />
         <path d="M 5 4 L 16 16" stroke="black" strokeWidth="2" fill="none" />

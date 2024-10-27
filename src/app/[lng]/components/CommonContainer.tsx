@@ -6,7 +6,7 @@ type Props = {
 };
 
 const CommonContainer: React.FC<PropsWithChildren<Props>> = ({ children, className }) => {
-  return <div className={cn('w-[1170px]', className)}>{children}</div>;
+  return <div className={cn('w-full md:max-w-[1170px]', className)}>{children}</div>;
 };
 
 export default CommonContainer;

@@ -23,7 +23,7 @@ export const FooterBase = ({ t, lng }: { t: TFunction; lng: string }) => {
         })} */}
       <div className="max-w-[1140px] w-full m-auto">
         <div className="text-white py-4 pl-0 font-extralight">
-          <p>Neve | 采用WordPress</p>
+          <p className='md:text-[17px] text-sm tracking-wide leading-7 font-normal px-10 md:p-0'>Neve | 采用WordPress</p>
         </div>
       </div>
     </footer>

@@ -67,8 +67,8 @@ export default async function Page({ params }: { params: Params }) {
     <CommonContainer className="min-h-[calc(100vh-64px)] overflow-y-auto m-auto">
       <div className="max-w-[819px] px-4 m-auto text-[#272626]">
         <div className="my-16">
-          <h1 className="text-7xl font-semibold mb-3 leading-tight my-16">{metadata.title.replace('：', ': ')}</h1>
-          <p>by yutaichi</p>
+          <h1 className="text-4xl md:text-7xl font-semibold mb-3 leading-tight my-16">{metadata.title.replace('：', ': ')}</h1>
+          <p className='md:text-[17px] text-sm tracking-wide leading-7 font-normal text-[#2b2b2b]'>by yutaichi</p>
         </div>
         <MDXRemote
           source={source}
@@ -79,11 +79,11 @@ export default async function Page({ params }: { params: Params }) {
             h4: ({ children }) => <h4 style={{ fontSize: '1em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h4>,
             h5: ({ children }) => <h5 style={{ fontSize: '0.83em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h5>,
             h6: ({ children }) => <h6 style={{ fontSize: '0.67em', fontWeight: 600, lineHeight: 1.25 }}>{children}</h6>,
-            p: ({ children }) => <p className="tracking-wide leading-relaxed text-md mb-8">{children}</p>,
+            p: ({ children }) => <p className="md:text-[17px] text-sm tracking-wide leading-relaxed text-md mb-8">{children}</p>,
             img: ({ alt, src }) => <img className="w-full mb-6" alt={alt} src={src} />,
-            h3: ({ children }) => <h3 className="mb-8 text-lg font-semibold">{children}</h3>,
-            ol: ({ children }) => <ol className="mb-6 list-decimal list-inside">{children}</ol>,
-            li: ({ children }) => <li className="mb-6 tracking-wide font-normal leading-relaxed text-md">{children}</li>,
+            h3: ({ children }) => <h3 className="mb-8 text-lg md:font-semibold font-normal">{children}</h3>,
+            ol: ({ children }) => <ol className="pl-[1rem] mb-6 list-decimal list-outside">{children}</ol>,
+            li: ({ children }) => <li className="mb-6 tracking-wide font-normal leading-relaxed md:text-[17px] text-sm">{children}</li>,
           }}
         />
         <div className="flex justify-between">

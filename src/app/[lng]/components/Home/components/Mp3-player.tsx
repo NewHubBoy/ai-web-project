@@ -12,7 +12,6 @@ import dayjs from 'dayjs';
 import _ from 'lodash';
 
 const MP3Player = () => {
-  
   const [currentTime, setCurrentTime] = useState(0);
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);

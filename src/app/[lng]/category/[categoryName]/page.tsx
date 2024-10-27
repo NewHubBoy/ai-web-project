@@ -59,21 +59,21 @@ export default async function Page({ params }: { params: Params }) {
   return (
     <CommonContainer className="m-auto min-h-[calc(100vh-64px)] overflow-y-auto">
       <div className="my-14 px-4">
-        <h1 className="text-[#2b2b2b] text-[70px] font-medium text-left mb-6 uppercase">{category?.categoryTitle}</h1>
-        <div className="grid grid-cols-2 gap-4">
+        <h1 className="text-[#2b2b2b] text-4xl md:text-[70px] font-medium text-left mb-6 uppercase">{category?.categoryTitle}</h1>
+        <div className="grid md:grid-cols-2 gap-4 grid-cols-1">
           {currentcategory?.map((item) => {
             return (
               <div className="p-6 bg-[rgba(0,0,0,.75)] text-white flex justify-end flex-col h-[300px]" key={item.label}>
                 <Link href={'/' + lng + '/' + item.href}>
-                  <h2 className="text-xl mb-3">{item.title}</h2>
+                  <h2 className="text-lg md:text-xl font-semibold mb-3">{item.title}</h2>
                 </Link>
                 <div className="mb-5">
                   <span className="font-light">by {'章三'}</span>
                 </div>
-                <div className="tracking-wider">
+                <p className="md:text-[17px] text-sm md:tracking-wider tracking-wide leading-7 font-normal ">
                   {item?.description + ' '}
                   <Link href={'/' + lng + '/' + item.href}>Read More »</Link>
-                </div>
+                </p>
               </div>
             );
           })}

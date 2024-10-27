@@ -38,7 +38,7 @@ const ConnectForm = () => {
           }}
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="after:content-['*'] after:ml-0.5 after:text-red-500 text-[17px] font-normal">姓名</FormLabel>
+              <FormLabel className="after:content-['*'] after:ml-0.5 after:text-red-500 md:text-[17px] text-sm tracking-wide font-normal">姓名</FormLabel>
               <FormControl>
                 <Input placeholder="username" {...field} className="border-2 border-black py-6 px-4" />
               </FormControl>
@@ -54,7 +54,7 @@ const ConnectForm = () => {
           }}
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="after:content-['*'] after:ml-0.5 after:text-red-500 text-[17px] font-normal">邮箱</FormLabel>
+              <FormLabel className="after:content-['*'] after:ml-0.5 after:text-red-500 md:text-[17px] text-sm tracking-wide font-normal">邮箱</FormLabel>
               <FormControl>
                 <Input placeholder="Email" {...field} className="border-2 border-black py-6 px-4" />
               </FormControl>
@@ -70,7 +70,7 @@ const ConnectForm = () => {
         //   }}
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-[17px] font-normal">留言</FormLabel>
+              <FormLabel className="md:text-[17px] text-sm tracking-wide font-normal">留言</FormLabel>
               <FormControl>
                 <Textarea placeholder="Message" {...field} className="border-2 border-black py-6 px-4" rows={10} />
               </FormControl>
